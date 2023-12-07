@@ -45,13 +45,16 @@ function Header() {
         <a href="#">Projects</a>
         <a href="#">Contact</a>
         <div>
-          <a href="#">
+          <a href="https://github.com/rafalmeidas" target="_blank">
             <GitHub />
           </a>
-          <a href="#">
+          <a href="#" target="_blank">
             <Twitter />
           </a>
-          <a href="#">
+          <a
+            href="https://www.linkedin.com/in/rafaelalmeidasilva"
+            target="_blank"
+          >
             <Linkedin />
           </a>
         </div>
