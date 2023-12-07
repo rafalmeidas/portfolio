@@ -5,11 +5,11 @@ import Twitter from "../components/icons/Twitter";
 import GitHub from "../components/icons/GitHub";
 import Logo from "../components/icons/Logo";
 
-const StyledHeader = styled.header`
+const TagHeader = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 41px 177px 0 220px;
+  padding: 41px 177px 220px 177px;
 
   > nav {
     display: flex;
@@ -36,7 +36,7 @@ const StyledHeader = styled.header`
 
 function Header() {
   return (
-    <StyledHeader>
+    <TagHeader>
       <Logo />
       <nav>
         <a href="#">Home</a>
@@ -59,7 +59,7 @@ function Header() {
           </a>
         </div>
       </nav>
-    </StyledHeader>
+    </TagHeader>
   );
 }
 
