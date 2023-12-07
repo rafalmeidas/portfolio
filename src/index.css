@@ -13,6 +13,9 @@
   --bg-dark: #191919;
   --light-content: #a7a7a7;
   --gradient: linear-gradient(90deg, #13b0f5 -2.06%, #e70faa 100%);
+
+  --title-light: #42446e;
+  --title-dark: #d9d9d9;
 }
 
 * {
