@@ -28,15 +28,15 @@ const TagSection = styled.section`
   > div {
     margin-top: 1.5rem;
     display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: repeat(10, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
     grid-gap: 1rem;
     align-items: center;
     justify-items: center;
 
     svg {
-      width: 100px;
-      height: 100px;
+      width: 120px;
+      height: 120px;
       padding: 1rem;
     }
   }
