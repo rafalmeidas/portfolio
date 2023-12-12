@@ -25,6 +25,9 @@
 
   --text-light: #666;
   --text-dark: #ccc;
+
+  --bg-card-light: #fff;
+  --bg-card-dark: #363636;
 }
 
 * {
