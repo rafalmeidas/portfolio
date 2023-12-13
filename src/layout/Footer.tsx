@@ -2,29 +2,72 @@ import styled from "styled-components";
 
 import SocialGroup from "../components/SocialGroup";
 import NavLinks from "../components/NavLinks";
-import Logo from "../components/icons/Logo";
+import Logo from "../components/Logo";
 
 const FooterTag = styled.footer`
-  padding: 0 177px 60px 177px;
+  padding: 0 20px;
+  margin-bottom: 20px;
 
   > div {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-direction: column;
+
+    h1 {
+      display: none;
+    }
 
     > div {
       display: flex;
       align-items: center;
-      gap: 33px;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    > nav {
+      display: none;
     }
   }
 
   hr {
-    margin: 40px 0;
-    height: 5px;
+    margin: 15px 0;
+    height: 2px;
     background-color: var(--title-light);
     border: none;
+  }
+
+  padding: 0 20px;
+
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    padding: 0 100px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    padding: 0 177px;
+
+    > div {
+      flex-direction: row;
+
+      h1 {
+        display: block;
+      }
+
+      > div {
+        flex-direction: row;
+        gap: 33px;
+      }
+
+      > nav {
+        display: flex;
+      }
+    }
+
+    hr {
+      margin: 40px 0;
+      height: 5px;
+    }
   }
 `;
 

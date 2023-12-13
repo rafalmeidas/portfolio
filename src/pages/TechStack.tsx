@@ -28,15 +28,38 @@ const TagSection = styled.section`
   > div {
     margin-top: 1.5rem;
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 1rem;
     align-items: center;
     justify-items: center;
 
     svg {
-      width: 120px;
-      height: 120px;
-      padding: 1rem;
+      width: 70px;
+      height: 70px;
+      padding: 0.5rem;
+    }
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    > div {
+      grid-template-columns: repeat(4, 1fr);
+
+      svg {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    > div {
+      grid-template-columns: repeat(6, 1fr);
+
+      svg {
+        width: 120px;
+        height: 120px;
+        padding: 1rem;
+      }
     }
   }
 `;

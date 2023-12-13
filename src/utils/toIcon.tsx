@@ -2,12 +2,14 @@ import { ReactNode } from "react";
 
 import JavaScriptIcon from "../components/icons/JavaScriptIcon";
 import TypeScriptIcon from "../components/icons/TypeScriptIcon";
+import CypressIcon from "../components/icons/CypressIcon";
 import DateFnsIcon from "../components/icons/DateFnsIcon";
 import AxiosIcon from "../components/icons/AxiosIcon";
 import Html5Icon from "../components/icons/Html5Icon";
 import ReactIcon from "../components/icons/ReactIcon";
 import Css3Icon from "../components/icons/Css3Icon";
 import SassIcon from "../components/icons/SassIcon";
+import JestIcon from "../components/icons/JestIcon";
 
 export class ToIcon {
   private static icons: Record<string, ReactNode> = {
@@ -19,6 +21,8 @@ export class ToIcon {
     javascript: <JavaScriptIcon />,
     "date-fns": <DateFnsIcon />,
     axios: <AxiosIcon />,
+    jest: <JestIcon />,
+    cypress: <CypressIcon />,
   };
 
   private static renderIcon(iconName: string): ReactNode {

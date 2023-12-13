@@ -4,7 +4,7 @@ import styled from "styled-components";
 import GitHubIcon from "./icons/GitHubIcon";
 import ChainIcon from "./icons/ChainIcon";
 
-import background from "../assets/backgroud-default.png";
+import background from "../assets/default.webp";
 import { ToIcon } from "../utils/toIcon";
 
 interface ProjectCardProps {
@@ -21,7 +21,6 @@ const TagDiv = styled.div`
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
-  max-height: 600px;
   height: 100%;
 
   border-radius: 20px;
@@ -50,22 +49,44 @@ const TagDivHeader = styled.div`
   img {
     width: 100%;
     object-fit: cover;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
   }
 
   > div {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    padding: 22px;
+    padding: 15px;
     color: var(--text-dark);
 
     p {
       text-align: justify;
       display: -webkit-box;
-      -webkit-line-clamp: 5;
+      -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
       text-overflow: ellipsis;
+    }
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    > div {
+      padding: 18px;
+
+      p {
+        -webkit-line-clamp: 3;
+      }
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    > div {
+      padding: 22px;
+
+      p {
+        -webkit-line-clamp: 5;
+      }
     }
   }
 `;
@@ -75,12 +96,13 @@ const TagDivFooter = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   gap: 1rem;
 
   p {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 0.5rem;
 
     svg {
       width: 30px;
