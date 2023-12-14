@@ -1,6 +1,6 @@
 import styled, { keyframes } from "styled-components";
 
-import WavingHand from "../components/WavingHand";
+import WavingHand from "./WavingHand";
 import profile from "../assets/profile.jpg";
 
 const TagSection = styled.section`

@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 
+import ReactRouterDomIcon from "../components/icons/ReactRouterDomIcon";
 import JavaScriptIcon from "../components/icons/JavaScriptIcon";
 import TypeScriptIcon from "../components/icons/TypeScriptIcon";
 import CypressIcon from "../components/icons/CypressIcon";
@@ -23,6 +24,7 @@ export class ToIcon {
     axios: <AxiosIcon />,
     jest: <JestIcon />,
     cypress: <CypressIcon />,
+    "react-router-dom": <ReactRouterDomIcon />,
   };
 
   private static renderIcon(iconName: string): ReactNode {

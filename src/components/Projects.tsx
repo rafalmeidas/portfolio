@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-import ProjectCard from "../components/ProjectCard";
-import Subtitle from "../components/Subtitle";
-import Title from "../components/Title";
+import ProjectCard from "./ProjectCard";
+import Subtitle from "./Subtitle";
+import Title from "./Title";
 
 const TagSection = styled.section`
   margin: 1.5rem 0 2rem 0;
@@ -41,7 +41,8 @@ const projects = [
       "O 'Search d_evs' é uma aplicação prática e funcional que demonstra habilidades de desenvolvimento front-end, incluindo a integração com a API do GitHub e a criação de interfaces de usuário intuitivas e responsivas. O aplicativo visa proporcionar uma experiência simples e eficaz para os usuários que desejam explorar e se conectar com a comunidade de desenvolvedores do GitHub.",
     previewLink: "https://github.com/rafalmeidas/search-d_evs",
     codeLink: "https://github.com/rafalmeidas/search-d_evs",
-    techStack: "html, sass, react, typescript, axios, date-fns, jest",
+    techStack:
+      "html, sass, react, react-router-dom, typescript, axios, date-fns, jest",
   },
   {
     title: "marvel-v1",
@@ -49,7 +50,7 @@ const projects = [
       "O 'marvel-v1' é uma aplicação prática e funcional que demonstra habilidades de desenvolvimento front-end, incluindo a integração com a API da Marvel e a criação de interfaces de usuário intuitivas e responsivas. O aplicativo visa proporcionar uma experiência simples e eficaz para os usuários que desejam explorar os personagens do universo Marvel.",
     previewLink: "https://github.com/rafalmeidas/marvel-v1",
     codeLink: "https://github.com/rafalmeidas/marvel-v1",
-    techStack: "html, sass, react, typescript, jest",
+    techStack: "html, sass, react, react-router-dom, typescript, jest",
   },
 ];
 
