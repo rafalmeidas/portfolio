@@ -29,6 +29,10 @@ const FooterTag = styled.footer`
     > nav {
       display: none;
     }
+
+    span {
+      font-size: 12px;
+    }
   }
 
   hr {
@@ -61,6 +65,10 @@ const FooterTag = styled.footer`
 
       > nav {
         display: flex;
+      }
+
+      span {
+        font-size: 16px;
       }
     }
 

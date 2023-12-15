@@ -16,12 +16,12 @@ const TagH1 = styled.h1`
   color: var(--title-dark);
 
   strong {
-    font-size: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 2px;
     white-space: nowrap;
+    font-size: 14px;
   }
 
   strong span:first-child {
@@ -30,6 +30,18 @@ const TagH1 = styled.h1`
 
   strong span:last-child {
     font-size: calc(20px + 8px);
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    strong {
+      font-size: 15px;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    strong {
+      font-size: 18px;
+    }
   }
 `;
 

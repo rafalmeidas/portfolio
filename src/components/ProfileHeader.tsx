@@ -57,9 +57,14 @@ const TagSection = styled.section`
   }
 
   @media screen and (min-width: 768px) and (max-width: 1023px) {
-    height: calc(100vh);
+    height: calc(100vh - (60px));
 
     > div {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
+
       h1 {
         font-size: 48px;
       }
@@ -67,12 +72,15 @@ const TagSection = styled.section`
   }
 
   @media screen and (min-width: 1024px) {
-    height: calc(100vh - (310px));
+    height: calc(100vh - (79px));
+    align-items: center;
+    justify-content: space-between;
 
     > div {
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
+      flex: 1;
 
       h1 {
         font-size: 58px;
@@ -103,7 +111,7 @@ const AnimatedArrow = styled.p`
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100%;
+  height: 40px;
 
   span {
     width: 10px;

@@ -102,6 +102,7 @@ const TagDivFooter = styled.div`
   p {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 0.5rem;
 
     svg {

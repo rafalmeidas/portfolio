@@ -1,4 +1,5 @@
 import { PropsWithChildren } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const NavTag = styled.nav`
@@ -16,14 +17,27 @@ const NavTag = styled.nav`
   }
 `;
 
+interface NavLink {
+  to: string;
+  name: string;
+}
+
+const links: NavLink[] = [
+  { to: "home", name: "Home" },
+  { to: "about", name: "About" },
+  { to: "tech-stack", name: "Tech Stack" },
+  { to: "projects", name: "Projects" },
+  { to: "contact", name: "Contact" },
+];
+
 function NavLinks({ children }: PropsWithChildren) {
   return (
     <NavTag>
-      <a href="#">Home</a>
-      <a href="#">About</a>
-      <a href="#">Tech Stack</a>
-      <a href="#">Projects</a>
-      <a href="#">Contact</a>
+      {links.map(({ to, name }) => (
+        <Link key={to} to={to}>
+          {name}
+        </Link>
+      ))}
       {children}
     </NavTag>
   );

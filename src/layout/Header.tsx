@@ -28,7 +28,7 @@ const TagHeader = styled.header`
   }
 
   @media screen and (min-width: 768px) and (max-width: 1023px) {
-    padding: 20px 100px 20px 100px;
+    padding: 20px 100px 0 100px;
 
     > nav {
       display: none;
@@ -36,7 +36,7 @@ const TagHeader = styled.header`
   }
 
   @media screen and (min-width: 1024px) {
-    padding: 41px 177px 220px 177px;
+    padding: 41px 177px 0 177px;
 
     > nav {
       display: flex;
