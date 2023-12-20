@@ -1,13 +1,6 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
-const infiniteRotation = keyframes`
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-`;
+import { infiniteRotation } from "../../styles/animations";
 
 const TagSvg = styled.svg`
   animation: ${infiniteRotation} 10s linear infinite;

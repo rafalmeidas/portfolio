@@ -7,6 +7,7 @@ const TagH2 = styled.h2`
   font-size: 30px;
   font-weight: 700;
   line-height: 150%;
+  margin-bottom: 0.5rem;
 
   @media screen and (min-width: 768px) and (max-width: 1023px) {
     font-size: 38px;
