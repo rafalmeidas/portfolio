@@ -3,6 +3,7 @@ import styled from "styled-components";
 import ProjectCard from "./ProjectCard";
 import Subtitle from "./Subtitle";
 import Title from "./Title";
+import { useTranslation } from "react-i18next";
 
 const TagSection = styled.section`
   margin: 1.5rem 0 2rem 0;
@@ -34,31 +35,31 @@ const TagSection = styled.section`
   }
 `;
 
-const projects = [
-  {
-    title: "Search d_evs",
-    description:
-      "O 'Search d_evs' é uma aplicação prática e funcional que demonstra habilidades de desenvolvimento front-end, incluindo a integração com a API do GitHub e a criação de interfaces de usuário intuitivas e responsivas. O aplicativo visa proporcionar uma experiência simples e eficaz para os usuários que desejam explorar e se conectar com a comunidade de desenvolvedores do GitHub.",
-    previewLink: "https://github.com/rafalmeidas/search-d_evs",
-    codeLink: "https://github.com/rafalmeidas/search-d_evs",
-    techStack:
-      "html, sass, react, react-router-dom, typescript, axios, date-fns, jest",
-  },
-  {
-    title: "marvel-v1",
-    description:
-      "O 'marvel-v1' é uma aplicação prática e funcional que demonstra habilidades de desenvolvimento front-end, incluindo a integração com a API da Marvel e a criação de interfaces de usuário intuitivas e responsivas. O aplicativo visa proporcionar uma experiência simples e eficaz para os usuários que desejam explorar os personagens do universo Marvel.",
-    previewLink: "https://github.com/rafalmeidas/marvel-v1",
-    codeLink: "https://github.com/rafalmeidas/marvel-v1",
-    techStack: "html, sass, react, react-router-dom, typescript, jest",
-  },
-];
-
 function Projects() {
+  const { t } = useTranslation();
+
+  const projects = [
+    {
+      title: "Search d_evs",
+      description: t("search-devs-description", { ns: ["projects"] }),
+      previewLink: "https://github.com/rafalmeidas/search-d_evs",
+      codeLink: "https://github.com/rafalmeidas/search-d_evs",
+      techStack:
+        "html, sass, react, react-router-dom, typescript, axios, date-fns, jest",
+    },
+    {
+      title: "marvel-v1",
+      description: t("marvel-description", { ns: ["projects"] }),
+      previewLink: "https://github.com/rafalmeidas/marvel-v1",
+      codeLink: "https://github.com/rafalmeidas/marvel-v1",
+      techStack: "html, sass, react, react-router-dom, typescript, jest",
+    },
+  ];
+
   return (
     <TagSection>
-      <Title>Projects</Title>
-      <Subtitle>Things I’ve built so far</Subtitle>
+      <Title>{t("title", { ns: ["projects"] })}</Title>
+      <Subtitle>{t("subtitle", { ns: ["projects"] })}</Subtitle>
 
       <div>
         {projects.map(

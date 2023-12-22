@@ -4,6 +4,7 @@ import MenuIcon from "../components/icons/MenuIcon";
 import SocialGroup from "../components/SocialGroup";
 import NavLinks from "../components/NavLinks";
 import Logo from "../components/Logo";
+import ChooseLanguage from "../components/ChooseLanguage";
 
 const TagHeader = styled.header`
   display: flex;
@@ -85,6 +86,7 @@ function Header() {
       </DivTag>
       <NavLinks>
         <SocialGroup />
+        <ChooseLanguage />
       </NavLinks>
     </TagHeader>
   );

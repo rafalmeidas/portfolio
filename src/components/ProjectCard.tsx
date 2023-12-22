@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 
 import GitHubIcon from "./icons/GitHubIcon";
@@ -137,6 +138,8 @@ function ProjectCard({
   codeLink,
   techStack,
 }: ProjectCardProps) {
+  const { t } = useTranslation();
+
   return (
     <TagDiv>
       <TagDivHeader>
@@ -156,10 +159,10 @@ function ProjectCard({
 
         <div>
           <a href={previewLink} target="_blank" rel="noopener noreferrer">
-            <ChainIcon /> Link Preview
+            <ChainIcon /> {t("preview", { ns: ["projectCard"] })}
           </a>
           <a href={codeLink} target="_blank" rel="noopener noreferrer">
-            <GitHubIcon /> View Code
+            <GitHubIcon /> {t("code", { ns: ["projectCard"] })}
           </a>
         </div>
       </TagDivFooter>

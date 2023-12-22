@@ -1,0 +1,21 @@
+{
+  "presentation-title": "Apresentação",
+  "presentation-line-1": "Caro Recrutador",
+  "presentation-line-2": "É com grande entusiasmo que me apresento como um profissional formado em Sistemas de Informação e com mais de 2 anos de sólida experiência em desenvolvimento web front-end. Ao longo de minha jornada, aprimorei minhas habilidades utilizando ferramentas como React e Angular, destacando minha expertise na implementação de testes automatizados utilizando tecnologias como Jest, React Testing Library e Cypress.",
+  "presentation-line-3": "Minha formação inclui experiência prática em diversas áreas de negócios, como Emissão de Notas Fiscais, Saúde, Clínica e Seguros. Ao longo dos anos, assumi funções multifacetadas, desde Desenvolvedor Front-end até Analista, Suporte de Infraestrutura e Suporte Técnico. Essa variedade de experiências me proporcionou uma compreensão abrangente do cenário tecnológico e a capacidade de enfrentar desafios com flexibilidade e eficácia.",
+  "presentation-line-4": "Além da experiência prática, tenho buscado consistentemente aprimorar meus conhecimentos por meio de cursos especializados. Enfatizo minha dedicação em adquirir expertise em tecnologias como React, Angular, Spring Boot, Typescript, Cypress e Testes Automatizados, reforçando meu compromisso com o aprendizado contínuo e a busca pela excelência em minha área.",
+  "presentation-line-5": "Estou entusiasmado com a possibilidade de integrar a sua equipa, onde pretendo aplicar de forma responsável e alinhada com as exigências da organização todos os conhecimentos adquiridos ao longo da minha carreira. Estou à disposição para discutir como minhas competências e experiências podem contribuir para os objetivos da empresa.",
+  "presentation-line-6": "Obrigado pela atenção e aguardo a oportunidade de uma entrevista para discutir melhor como posso agregar valor à sua equipe.",
+  "presentation-line-7": "Atenciosamente",
+  "experience-title": "Experiências",
+  "front-end-developer": "Desenvolvedor Front-end",
+  "it-assistant-1": "Assistente de T.I",
+  "it-assistant-2": "Auxiliar de T.I",
+  "technical-support": "Suporte Técnico",
+  "petize-activity": "Manter e desenvolver novas funcionalidades nos sistemas Petize (produtos), utilizando tecnologias Javascript, Typescript, React e Angular, desenvolvimento de testes automatizados.",
+  "objective-activity": "Criar novas aplicações do zero, desde a estrutura e padrão usado e bibliotecas, manter e desenvolver novas funcionalidades nos sistemas (produtos) da Objective usando as seguintes tecnologias no Front-end, Javascript, Typescript, React, Angular e Vue, também atuei um pouco no Back-end, utilizando .NET Core e Spring Boot, também desenvolvi testes autotomizados, unitários e de integração, atuei em grandes projetos desenvolvendo com qualidade. Fazia análise de requisitos, para criação de tarefas no Jira para a equipe, tanto para Front-end, separando atividades por componentes, páginas e serviços, quando Back-end na criação e manutenção de endpoints.",
+  "uoppecan-activity-1": "Suporte ao usuário no uso do sistema Tasy, criação de relatórios utilizando o banco de dados Oracle e a ferramenta de criação de relatórios do Tasy.",
+  "uoppecan-activity-2": "Manutenção de computadores e impressoras, novas instalações de infraestrutura (cabos de rede, instalação de computadores e impressoras, entre outros equipamentos) e suporte ao usuário em questões de uso de equipamentos.",
+  "simple-work-activity": "Suporte ao usuário no uso dos sistemas da Simple Work, envolvendo todos os tipos de notas fiscais, auxiliando o usuário nos processos. Realizava treinamento de uso dos sistemas e implantação dos sistemas.",
+  "company-uoppecan": "Hospital do Câncer Uopeccan"
+}

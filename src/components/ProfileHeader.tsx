@@ -1,6 +1,8 @@
 import styled, { keyframes } from "styled-components";
+import { useTranslation } from "react-i18next";
 
 import WavingHand from "./WavingHand";
+
 import profile from "../assets/profile.jpg";
 
 const TagSection = styled.section`
@@ -140,12 +142,16 @@ const AnimatedArrow = styled.p`
 `;
 
 function ProfileHeader() {
+  const { t } = useTranslation();
+
   return (
     <TagSection>
       <div>
         <h1>
-          Hi <WavingHand />, <br /> My name is <strong>Rafael Silva</strong>
-          <br />I build things for web
+          {t("greeting", { ns: ["profileHeader"] })} <WavingHand />, <br />{" "}
+          {t("name", { ns: ["profileHeader"] })} <strong>Rafael Silva</strong>
+          <br />
+          {t("role", { ns: ["profileHeader"] })}
         </h1>
         <div>
           <img alt="Rafael Silva" src={profile} />

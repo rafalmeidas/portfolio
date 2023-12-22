@@ -1,4 +1,5 @@
 import { PropsWithChildren } from "react";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -22,15 +23,17 @@ interface NavLink {
   name: string;
 }
 
-const links: NavLink[] = [
-  { to: "home", name: "Home" },
-  { to: "about", name: "About" },
-  { to: "tech-stack", name: "Tech Stack" },
-  { to: "projects", name: "Projects" },
-  { to: "contact", name: "Contact" },
-];
-
 function NavLinks({ children }: PropsWithChildren) {
+  const { t } = useTranslation();
+
+  const links: NavLink[] = [
+    { to: "home", name: t("home", { ns: ["menu"] }) },
+    { to: "about", name: t("about", { ns: ["menu"] }) },
+    { to: "techStack", name: t("tech-stack", { ns: ["menu"] }) },
+    { to: "projects", name: t("projects", { ns: ["menu"] }) },
+    { to: "contact", name: t("contact", { ns: ["menu"] }) },
+  ];
+
   return (
     <NavTag>
       {links.map(({ to, name }) => (

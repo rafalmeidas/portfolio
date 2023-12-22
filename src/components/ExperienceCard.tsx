@@ -1,4 +1,8 @@
+import { Fragment } from "react";
+import { useTranslation } from "react-i18next";
 import styled from "styled-components";
+
+import useMediaQuery from "../hooks/useMediaQuery";
 
 const TagDiv = styled.div`
   width: 100%;
@@ -27,19 +31,10 @@ const TagDiv = styled.div`
 
   p {
     &:nth-child(1) {
-      display: none;
       text-align: left;
       align-items: center;
       justify-content: start;
       gap: 5px;
-    }
-
-    &:nth-child(2) {
-      display: block;
-    }
-
-    &:nth-child(3) {
-      display: block;
     }
   }
 
@@ -50,20 +45,6 @@ const TagDiv = styled.div`
     strong {
       font-size: 17px;
     }
-
-    p {
-      &:nth-child(1) {
-        display: flex;
-      }
-
-      &:nth-child(2) {
-        display: none;
-      }
-
-      &:nth-child(3) {
-        display: none;
-      }
-    }
   }
 
   @media screen and (min-width: 1024px) {
@@ -73,64 +54,97 @@ const TagDiv = styled.div`
     strong {
       font-size: 17px;
     }
-
-    p {
-      &:nth-child(1) {
-        display: flex;
-      }
-
-      &:nth-child(2) {
-        display: none;
-      }
-
-      &:nth-child(3) {
-        display: none;
-      }
-    }
   }
 `;
 
-export interface ExperienceCardProps {
-  companyName: string;
+const TagDivDivider = styled.div`
+  width: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.5rem auto;
+  height: 0.5px;
+
+  background-color: var(--title-dark);
+  border-radius: 4px;
+`;
+
+interface FunctionExperience {
   functionName: string;
   activities: string;
   initialDate: string;
   finalDate?: string | null;
 }
 
-function ExperienceCard({
-  companyName,
-  functionName,
-  activities,
-  initialDate,
-  finalDate: final,
-}: ExperienceCardProps) {
-  const finalDate = !final ? "at the moment" : final;
+export interface ExperienceCardProps {
+  companyName: string;
+  functions: FunctionExperience[];
+}
+
+function ExperienceCard({ companyName, functions }: ExperienceCardProps) {
+  const { t } = useTranslation();
+
+  const matchMax768 = useMediaQuery({ maxWidth: 768 });
+  const matchMin768Max1024 = useMediaQuery({ minWidth: 768, maxWidth: 1023 });
+  const matchMin1024 = useMediaQuery({ minWidth: 1024 });
+
+  const smallScreen = matchMin768Max1024 || matchMax768;
+
+  const finalDate = (final: string | null | undefined) =>
+    !final ? t("at-the-moment", { ns: ["experienceCard"] }) : final;
+
+  const hasAFunction = () => functions.length === 1;
 
   return (
     <TagDiv>
-      <p>
-        <strong>Company: </strong> {companyName} - {initialDate} - {finalDate}
-      </p>
+      {!smallScreen ? (
+        <p>
+          <strong>{t("company", { ns: ["experienceCard"] })}: </strong>{" "}
+          {companyName}{" "}
+          {hasAFunction() && matchMin1024
+            ? `- ${functions[0].initialDate} - ${finalDate(
+                functions[0].finalDate,
+              )}`
+            : null}
+        </p>
+      ) : null}
 
-      <p>
-        <strong>Company: </strong> {companyName}
-      </p>
+      {smallScreen ? (
+        <p>
+          <strong>{t("company", { ns: ["experienceCard"] })}: </strong>{" "}
+          {companyName}
+        </p>
+      ) : null}
 
-      <p>
-        <span>
-          <strong>Period: </strong> {initialDate} - {finalDate}
-        </span>
-      </p>
+      {functions.map(
+        (
+          { initialDate, finalDate: final, functionName, activities },
+          index,
+        ) => (
+          <Fragment key={`function-${index}`}>
+            <p>
+              <span>
+                <strong>{t("period", { ns: ["experienceCard"] })}: </strong>{" "}
+                {initialDate} - {finalDate(final)}
+              </span>
+            </p>
 
-      <p>
-        <strong>Function: </strong> {functionName}
-      </p>
+            <p>
+              <strong>{t("function", { ns: ["experienceCard"] })}: </strong>{" "}
+              {functionName}
+            </p>
 
-      <p>
-        <strong>Activities: </strong>
-        {activities}
-      </p>
+            <p>
+              <strong>{t("activities", { ns: ["experienceCard"] })}: </strong>
+              {activities}
+            </p>
+
+            {!hasAFunction() && index < functions.length - 1 ? (
+              <TagDivDivider />
+            ) : null}
+          </Fragment>
+        ),
+      )}
     </TagDiv>
   );
 }

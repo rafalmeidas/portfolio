@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 
 import StyledComponentsIcon from "./icons/StyledComponentsIcon";
@@ -65,10 +66,12 @@ const TagSection = styled.section`
 `;
 
 function TechStack() {
+  const { t } = useTranslation();
+
   return (
     <TagSection>
-      <Title>My Tech Stack</Title>
-      <Subtitle>Technologies I’ve been working with recently</Subtitle>
+      <Title>{t("title", { ns: ["techStack"] })}</Title>
+      <Subtitle>{t("subtitle", { ns: ["techStack"] })}</Subtitle>
 
       <div>
         <Html5Icon />
