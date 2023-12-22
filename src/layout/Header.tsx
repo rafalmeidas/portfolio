@@ -113,7 +113,7 @@ function Header() {
         </NavLinks>
       </TagHeader>
 
-      <Drawer open={isDrawerOpen} onTo={toggleDrawer} />
+      {isDrawerOpen ? <Drawer open={isDrawerOpen} onTo={toggleDrawer} /> : null}
     </>
   );
 }

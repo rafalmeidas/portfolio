@@ -4,12 +4,27 @@ import ChooseLanguage from "./ChooseLanguage";
 import SocialGroup from "./SocialGroup";
 import NavLinks from "./NavLinks";
 
+import { keyframes } from "styled-components";
+
+const slideInLeft = keyframes`
+0% {
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  visibility: visible;
+}
+100% {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+`;
+
 const TagDivOverlay = styled.div<{
   $open: boolean;
 }>`
   ${({ $open }) => css`
     position: absolute;
     top: 0;
+    left: 0;
     width: ${$open ? "100vw" : 0};
     height: 100%;
     background-color: rgba(0, 0, 0, 0.6);
@@ -18,23 +33,17 @@ const TagDivOverlay = styled.div<{
   `}
 `;
 
-const DivTagDrawer = styled.div<{
-  $open: boolean;
-}>`
-  ${({ $open }) => css`
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 2;
-    top: 0;
-    left: 0;
-    background-color: var(--bg-dark);
-    overflow-x: hidden;
-    padding: ${$open ? "60px 20px 20px 20px" : "0"};
-    width: ${$open ? "250px" : "0"};
-
-    transition: all 0.4s ease-in-out;
-  `}
+const DivTagDrawer = styled.div`
+  background-color: var(--bg-dark);
+  min-width: 250px;
+  min-height: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  padding: 60px 20px 20px 20px;
+  animation: ${slideInLeft} 0.5s both;
 `;
 
 const DivTagContent = styled.div`
@@ -58,8 +67,8 @@ interface onToProps {
 
 function Drawer({ open, onTo }: onToProps) {
   return (
-    <TagDivOverlay $open={open} onClick={onTo}>
-      <DivTagDrawer $open={open}>
+    <>
+      <DivTagDrawer>
         <DivTagContent>
           <section>
             <ChooseLanguage />
@@ -69,7 +78,8 @@ function Drawer({ open, onTo }: onToProps) {
           <SocialGroup />
         </DivTagContent>
       </DivTagDrawer>
-    </TagDivOverlay>
+      <TagDivOverlay $open={open} onClick={onTo} />
+    </>
   );
 }
 
