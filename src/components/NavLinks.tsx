@@ -1,21 +1,28 @@
 import { PropsWithChildren } from "react";
+import styled, { css } from "styled-components";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import styled from "styled-components";
 
-const NavTag = styled.nav`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 54px;
+interface NavTagProps {
+  $isRow: boolean;
+}
 
-  a {
-    text-decoration: none;
-    color: var(--light-content);
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 130%;
-  }
+const NavTag = styled.nav<NavTagProps>`
+  ${({ $isRow }) => css`
+    display: flex;
+    align-items: ${$isRow ? "center" : "start"};
+    justify-content: ${$isRow ? "center" : "start"};
+    flex-direction: ${$isRow ? "row" : "column"};
+    gap: ${$isRow ? "54px" : "24px"};
+
+    a {
+      text-decoration: none;
+      color: var(--light-content);
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 130%;
+    }
+  `}
 `;
 
 interface NavLink {
@@ -23,7 +30,12 @@ interface NavLink {
   name: string;
 }
 
-function NavLinks({ children }: PropsWithChildren) {
+interface NavLinksProps extends PropsWithChildren {
+  isRow?: boolean;
+  onTo?: () => void;
+}
+
+function NavLinks({ children, isRow = true, onTo }: NavLinksProps) {
   const { t } = useTranslation();
 
   const links: NavLink[] = [
@@ -35,9 +47,9 @@ function NavLinks({ children }: PropsWithChildren) {
   ];
 
   return (
-    <NavTag>
+    <NavTag $isRow={isRow ?? true}>
       {links.map(({ to, name }) => (
-        <Link key={to} to={to}>
+        <Link key={to} to={to} onClick={onTo ? onTo : undefined}>
           {name}
         </Link>
       ))}

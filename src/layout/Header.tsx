@@ -1,10 +1,13 @@
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 
-import MenuIcon from "../components/icons/MenuIcon";
-import SocialGroup from "../components/SocialGroup";
-import NavLinks from "../components/NavLinks";
-import Logo from "../components/Logo";
 import ChooseLanguage from "../components/ChooseLanguage";
+import SocialGroup from "../components/SocialGroup";
+import MenuIcon from "../components/icons/MenuIcon";
+import useMediaQuery from "../hooks/useMediaQuery";
+import NavLinks from "../components/NavLinks";
+import Drawer from "../components/Drawer";
+import Logo from "../components/Logo";
 
 const TagHeader = styled.header`
   display: flex;
@@ -76,19 +79,42 @@ const DivTag = styled.div`
 `;
 
 function Header() {
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
+  const matchMin1024 = useMediaQuery({ minWidth: 1024 });
+
+  const toggleDrawer = () => {
+    const open = !isDrawerOpen;
+
+    if (open) document.body.classList.add("no-scroll");
+    else document.body.classList.remove("no-scroll");
+
+    setIsDrawerOpen(open);
+  };
+
+  useEffect(() => {
+    if (matchMin1024 && isDrawerOpen) {
+      setIsDrawerOpen(false);
+    }
+  }, [isDrawerOpen, matchMin1024]);
+
   return (
-    <TagHeader>
-      <Logo />
-      <DivTag>
-        <button aria-label="controlar menu">
-          <MenuIcon />
-        </button>
-      </DivTag>
-      <NavLinks>
-        <SocialGroup />
-        <ChooseLanguage />
-      </NavLinks>
-    </TagHeader>
+    <>
+      <TagHeader>
+        <Logo />
+        <DivTag>
+          <button aria-label="controlar menu" onClick={toggleDrawer}>
+            <MenuIcon />
+          </button>
+        </DivTag>
+        <NavLinks>
+          <SocialGroup />
+          <ChooseLanguage />
+        </NavLinks>
+      </TagHeader>
+
+      <Drawer open={isDrawerOpen} onTo={toggleDrawer} />
+    </>
   );
 }
 
