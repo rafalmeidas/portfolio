@@ -89,7 +89,7 @@ Error generating stack: `+o.message+`
       line-height: 130%;
     }
   `}
-`;function Vu({children:e,isRow:t=!0,onTo:n}){const{t:r}=jn(),i=[{to:"home",name:r("home",{ns:["menu"]})},{to:"about",name:r("about",{ns:["menu"]})},{to:"techStack",name:r("tech-stack",{ns:["menu"]})},{to:"projects",name:r("projects",{ns:["menu"]})},{to:"contact",name:r("contact",{ns:["menu"]})}];return f.jsxs(r4,{$isRow:t??!0,children:[i.map(({to:o,name:a})=>f.jsx(Im,{to:o,onClick:n||void 0,children:a},o)),e]})}const i4=ee.h1`
+`;function Vu({children:e,isRow:t=!0,onTo:n}){const{t:r}=jn(),i=[{to:"home",name:r("home",{ns:["menu"]})},{to:"about",name:r("about",{ns:["menu"]})},{to:"tech-stack",name:r("tech-stack",{ns:["menu"]})},{to:"projects",name:r("projects",{ns:["menu"]})},{to:"contact",name:r("contact",{ns:["menu"]})}];return f.jsxs(r4,{$isRow:t??!0,children:[i.map(({to:o,name:a})=>f.jsx(Im,{to:o,onClick:n||void 0,children:a},o)),e]})}const i4=ee.h1`
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -205,6 +205,10 @@ Error generating stack: `+o.message+`
       height: 5px;
     }
   }
+
+  @media screen and (min-width: 1920px) {
+    padding: 0 400px;
+  }
 `;function a4(){return f.jsxs(o4,{children:[f.jsxs("div",{children:[f.jsx(oh,{}),f.jsxs("div",{children:[f.jsx("span",{children:"+55 (44) 9 9856-0723"}),f.jsx("span",{children:"rafalmeidas21@gmail.com"}),f.jsx(Hu,{})]})]}),f.jsx("hr",{}),f.jsxs("div",{children:[f.jsx(Vu,{}),f.jsx("span",{children:"Designed and build by Rafael Silva with ❤️"})]})]})}function s4(){const e="portifolio-rafael-silva";return{getLanguage:()=>localStorage.getItem(e),setLanguage:r=>localStorage.setItem(e,r)}}const l4=ee.select`
   cursor: pointer;
   font-size: 12px;
@@ -298,6 +302,10 @@ Error generating stack: `+o.message+`
       display: flex;
     }
   }
+
+  @media screen and (min-width: 1920px) {
+    padding: 41px 400px 0 400px;
+  }
 `,m4=ee.div`
   display: flex;
 
@@ -343,6 +351,18 @@ Error generating stack: `+o.message+`
 
   @media screen and (min-width: 1024px) {
     padding: 0 177px;
+
+    > section {
+      margin-top: 10rem;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+
+  @media screen and (min-width: 1920px) {
+    padding: 0 400px;
 
     > section {
       margin-top: 10rem;
@@ -533,7 +553,7 @@ Error generating stack: `+o.message+`
   animation: ${T4} 2.5s infinite;
   transform-origin: 70% 70%;
   display: inline-block;
-`;function M4(){return f.jsx(O4,{children:"👋"})}const _4=""+new URL("profile-X02WW_Av.jpg",import.meta.url).href,D4=ee.section`
+`;function M4(){return f.jsx(O4,{children:"👋"})}const _4=""+new URL("profile-ufUzU82o.webp",import.meta.url).href,D4=ee.section`
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -581,7 +601,7 @@ Error generating stack: `+o.message+`
         border-radius: inherit;
 
         object-fit: cover;
-        object-position: center center;
+        object-position: 50% 15%;
       }
     }
   }
