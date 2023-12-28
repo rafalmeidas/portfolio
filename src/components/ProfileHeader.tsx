@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 
 import WavingHand from "./WavingHand";
 
-import profile from "../assets/profile.jpg";
+import profile from "../assets/profile.webp";
 
 const TagSection = styled.section`
   width: 100%;
@@ -53,7 +53,7 @@ const TagSection = styled.section`
         border-radius: inherit;
 
         object-fit: cover;
-        object-position: center center;
+        object-position: 50% 15%;
       }
     }
   }

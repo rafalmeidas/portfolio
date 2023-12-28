@@ -27,6 +27,18 @@ const TagMain = styled.main`
       }
     }
   }
+
+  @media screen and (min-width: 1920px) {
+    padding: 0 400px;
+
+    > section {
+      margin-top: 10rem;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
 `;
 
 function Main({ children }: PropsWithChildren) {

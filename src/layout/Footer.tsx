@@ -77,6 +77,10 @@ const FooterTag = styled.footer`
       height: 5px;
     }
   }
+
+  @media screen and (min-width: 1920px) {
+    padding: 0 400px;
+  }
 `;
 
 function Footer() {

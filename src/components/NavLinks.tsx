@@ -41,7 +41,7 @@ function NavLinks({ children, isRow = true, onTo }: NavLinksProps) {
   const links: NavLink[] = [
     { to: "home", name: t("home", { ns: ["menu"] }) },
     { to: "about", name: t("about", { ns: ["menu"] }) },
-    { to: "techStack", name: t("tech-stack", { ns: ["menu"] }) },
+    { to: "tech-stack", name: t("tech-stack", { ns: ["menu"] }) },
     { to: "projects", name: t("projects", { ns: ["menu"] }) },
     { to: "contact", name: t("contact", { ns: ["menu"] }) },
   ];

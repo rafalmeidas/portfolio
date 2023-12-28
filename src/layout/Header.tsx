@@ -46,6 +46,10 @@ const TagHeader = styled.header`
       display: flex;
     }
   }
+
+  @media screen and (min-width: 1920px) {
+    padding: 41px 400px 0 400px;
+  }
 `;
 
 const DivTag = styled.div`
